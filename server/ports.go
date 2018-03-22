@@ -172,7 +172,7 @@ func (pm *PortManager) cleanReservedPortsWorker() {
 		pm.mu.Lock()
 		for name, ctx := range pm.reservedPorts {
 			if ctx.Closed && time.Since(ctx.UpdateTime) > MaxPortReservedDuration {
-				delete(pm.reservedPorts, name)
+//				delete(pm.reservedPorts, name)
 			}
 		}
 		pm.mu.Unlock()
